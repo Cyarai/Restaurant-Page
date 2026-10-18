@@ -1,0 +1,187 @@
+/* styles.css */
+:root {
+  --broth: #0f3d3e;
+  --chili: #e4572e;
+  --noodle: #f2c14e;
+  --paper: #f3f6f5;
+  --ink: #12262a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: var(--broth);
+  color: var(--paper);
+}
+
+.brand {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  color: var(--noodle);
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav button {
+  font: inherit;
+  color: var(--paper);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 0.35rem 1.1rem;
+  cursor: pointer;
+}
+
+nav button:hover {
+  border-color: var(--noodle);
+}
+
+nav button[aria-current="page"] {
+  background: var(--noodle);
+  color: var(--broth);
+  font-weight: 600;
+}
+
+nav button:focus-visible {
+  outline: 3px solid var(--chili);
+  outline-offset: 2px;
+}
+
+/* ---------- Content ---------- */
+#content {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+}
+
+.headline {
+  margin: 0 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--broth);
+}
+
+.lede {
+  font-size: 1.15rem;
+  max-width: 38rem;
+}
+
+/* ---------- Home ---------- */
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.home-text {
+  max-width: 38rem;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: var(--chili);
+  color: var(--paper);
+  text-align: center;
+  padding: 1rem;
+  justify-self: start;
+}
+
+.badge-big {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.badge-small {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 48rem) {
+  .home {
+    grid-template-columns: 1fr auto;
+  }
+
+  .badge {
+    justify-self: center;
+  }
+}
+
+/* ---------- Menu ---------- */
+.dish-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 2px dotted var(--broth);
+}
+
+.dish-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dish-description {
+  margin: 0.15rem 0 0;
+  max-width: 34rem;
+}
+
+.dish-price {
+  font-weight: 700;
+  color: var(--chili);
+  white-space: nowrap;
+}
+
+/* ---------- Contact ---------- */
+.contact-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.75rem 2rem;
+  margin: 2rem 0 0;
+}
+
+.contact-list dt {
+  font-weight: 700;
+  color: var(--broth);
+}
+
+.contact-list dd {
+  margin: 0;
+}
